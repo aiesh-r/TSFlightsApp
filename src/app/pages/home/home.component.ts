@@ -8,12 +8,14 @@ import { Flight } from 'src/app/shared/interfaces/flight.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  flights: Flight[] = [];
+  flights: any[] = [];
   constructor(private flightsService: FlightsService) {}
 
   ngOnInit(): void {
     // this.getFlights();
-    this.flights = this.flightsService.getFlight();
+    this.flightsService.getFlight().subscribe((data) => {
+      this.flights = data;
+    });
   }
 
   // getFlights() {
