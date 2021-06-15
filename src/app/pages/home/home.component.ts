@@ -9,16 +9,21 @@ import { Flight } from 'src/app/shared/interfaces/flight.model';
 })
 export class HomeComponent implements OnInit {
   flights: Flight[] = [];
+  public selectedOrigin: string = '';
+  public selectedDestination: string = '';
   constructor(private flightsService: FlightsService) {}
 
   ngOnInit(): void {
-    // this.getFlights();
     this.flightsService.getFlight().subscribe((data) => {
       this.flights = data;
     });
   }
 
-  // getFlights() {
-  //   this.flights = this.flightsService.getFlight();
-  // }
+  getFilteredFlights(): void {
+    const origin = this.selectedOrigin;
+    const dest = this.selectedDestination;
+    this.flightsService.getFiteredFlights(origin, dest).subscribe((data) => {
+      this.flights = data;
+    });
+  }
 }
