@@ -8,7 +8,7 @@ import { Flight } from 'src/app/shared/interfaces/flight.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  flights: any[] = [];
+  flights: Flight[] = [];
   constructor(private flightsService: FlightsService) {}
 
   ngOnInit(): void {
