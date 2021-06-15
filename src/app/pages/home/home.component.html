@@ -1,9 +1,9 @@
 <div class="container">
   <div class="flights">
     <div *ngFor="let flight of flights" class="flight_result">
-      <div class="flight_number">{{ flight.flightNumber }}</div>
-      <div class="departs">{{ flight.departDate | date: "shortDate" }}</div>
-      <div class="arrives">{{ flight.arriveDate | date: "shortDate" }}</div>
+      <div class="flight_number">{{ flight.fightnumber }}</div>
+      <div class="departs">{{ flight.depart | date: "shortDate" }}</div>
+      <div class="arrives">{{ flight.arrive | date: "shortDate" }}</div>
       <div class="nonstop">{{ flight.nonstop }}</div>
     </div>
   </div>

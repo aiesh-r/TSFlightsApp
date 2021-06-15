@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getFlights();
-    this.flights = this.flightsService.getFlight();
+    this.flightsService.getFlight().subscribe((data) => {
+      this.flights = data;
+    });
   }
 
   // getFlights() {
