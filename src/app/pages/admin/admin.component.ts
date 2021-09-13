@@ -10,8 +10,8 @@ import { FlightsService } from 'src/app/shared/services/http/flights.service';
 export class AdminComponent implements OnInit {
   origin: string = '';
   destination: string = '';
-  flightNumber: number=0;
-  depart: string='';
+  flightNumber: number = 0;
+  depart: any;
   arrive: any;
   nonstop: boolean = false;
   constructor(private flightService: FlightsService) {}
@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
 
   createFlight(): void {
     console.log('sfsfdfs');
-     console.log('Commit test');
+    console.log('Commit test');
     const flight: Flight = {
       origin: this.origin,
       destination: this.destination,
