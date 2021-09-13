@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Flight } from '../../interfaces/flight.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FlightsService {
-  // path: string = 'http://localhost:3000';
   constructor(private http: HttpClient) {
     this.backEndURL = this.getBackEndUrl();
   }
@@ -15,6 +15,14 @@ export class FlightsService {
 
   getFlight(): Observable<any> {
     return this.http.get(`${this.backEndURL}/flights/`);
+  }
+
+  getFiteredFlights(origin: string, dest: string): Observable<any> {
+    return this.http.get(`${this.backEndURL}/flights/query/${origin}/${dest}`);
+  }
+
+  postFlight(flight: Flight): Observable<any> {
+    return this.http.post(`${this.backEndURL}/flights`, flight);
   }
 
   addFlight() {}
