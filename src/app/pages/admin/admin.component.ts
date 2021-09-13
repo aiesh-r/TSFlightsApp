@@ -24,6 +24,7 @@ export class AdminComponent implements OnInit {
 
   createFlight(): void {
     console.log('sfsfdfs');
+     console.log('Commit test');
     const flight: Flight = {
       origin: this.origin,
       destination: this.destination,
