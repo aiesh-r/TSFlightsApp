@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit {
   origin: string = '';
   destination: string = '';
   flightNumber: number=0;
-  depart: any;
+  depart: string='';
   arrive: any;
   nonstop: boolean = false;
   constructor(private flightService: FlightsService) {}
