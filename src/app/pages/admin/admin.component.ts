@@ -10,7 +10,7 @@ import { FlightsService } from 'src/app/shared/services/http/flights.service';
 export class AdminComponent implements OnInit {
   origin: string = '';
   destination: string = '';
-  flightNumber: number = 0;
+  flightNumber: any;
   depart: any;
   arrive: any;
   nonstop: boolean = false;
